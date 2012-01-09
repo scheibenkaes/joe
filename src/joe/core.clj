@@ -18,7 +18,7 @@
 
 (defn shorten [cnt url]
   "Returns {:cnt new-count :url-info {...}}"
-  {:id cnt :url url :short-url (encoding/hex-encode cnt) :n-decoded 0})
+  {:id (str cnt) :url url :short-url (encoding/hex-encode cnt) :n-decoded 0})
 
 (defn shorten! [url]
   (locking lock
