@@ -16,8 +16,9 @@
 
 (def lock (Object.))
 
-(defn shorten [cnt url]
+(defn shorten
   "Returns {:cnt new-count :url-info {...}}"
+  [cnt url]
   {:id (str cnt) :url url :short-url (encoding/hex-encode cnt) :n-decoded 0})
 
 (defn shorten! [url]
