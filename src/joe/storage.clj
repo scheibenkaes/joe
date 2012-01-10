@@ -6,6 +6,9 @@
   (dosync
     (alter in-memory conj new-url)))
 
+(defn get-by-short-id [short-id]
+  (-> (filter #(= short-id (:short-url %1)) @in-memory) first))
+
 (defn get-by-id [id]
   (-> (filter #(= id (:id %1)) @in-memory) first))
 

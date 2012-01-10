@@ -12,11 +12,11 @@
       (response/json updated))))
 
 (defn decode-url! [id]
-  (if-let [url (storage/get-by-id id)]
+  (if-let [url (storage/get-by-short-id id)]
     (respond-with-found-info url)
     (response/status 404 "Huh?")))
 
-(defpage "/d/:id" {:keys [id]}
+(defpage "/i/:id" {:keys [id]}
   (decode-url! id))
 
 (defn save-url! [url]
