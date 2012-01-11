@@ -7,7 +7,7 @@
 
 (defn respond-with-found-info [info]
   (do 
-    (let [updated (update-in info [:n-decoded] inc)]
+    (let [updated (update-in info [:decoded] inc)]
       (storage/update! updated)
       (response/json updated))))
 
